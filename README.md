@@ -110,12 +110,12 @@ regard when building an IoT-solution using AWS.
 #### Security
 - As all the connections to the AWS IoT core are TLS connections and authentication is <br/>
 done with either x.509 certificates or Amazon Cognito. In this project I have hardcoded <br/>
-the keys into the device code. Although in a seperate file, this is never a good practice.<br/> A better practice would have been to learn and use the AWS Key management service.<br/>
+the keys into the device code. Although in a seperate file, *secrets.h*, this is never a good practice.<br/> A better practice would have been to learn and use the AWS Key management service.<br/>
 This would not only make it safer but also simplify the distribution of keys and certificates<br/> to multiple devices.
 
 - Another important security principle is "least privledged". AWS uses Roles and Policies <br/>
 to grant privileges to devices and users. These can be highly customized to suit the intended<br/> 
-use. Making sure everything can access only exactly what it need limits the damage that can <br/> be done if a resource would be compromised. 
+use. Making sure that every part can access only exactly what it need limits the damage that<br/>can  be done if a resource would be compromised. 
 
 - As we're working with IoT devices it's also important to remeber to look at the physical <br/>security. Can the device be easily tempered with? Or can the environment damages it or <br/>
 in some way unintended mess up the data? 
